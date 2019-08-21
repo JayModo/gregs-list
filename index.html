@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <title>Gregs list</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <h1 class="col-12"></h1>
+      <form onsubmit="app.controllers.carController.addCar(event)" class="col-5">
+        <div class="form-group">
+          <label for="make">Email address</label>
+          <input type="email" class="form-control" id="make" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="make">Email address</label>
+          <input type="email" class="form-control" id="make" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="make">Email address</label>
+          <input type="email" class="form-control" id="make" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="make">Email address</label>
+          <input type="email" class="form-control" id="make" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="make">Email address</label>
+          <input type="email" class="form-control" id="make" placeholder="Enter email">
+        </div>
+
+        <button type="submit" class="btn btn-primary"></button>
+      </form>
+    </div>
+  </div>
+  <div id="cars" class="row">
+    <div class="col-4 border">
+      <h1>make</h1>
+      <h3>model</h3>
+      <img src="imgUrl" alt="">
+      <h3>price</h3>
+      <h3>year</h3>
+
+    </div>
+  </div>
+  </div>
+
+
+
+  <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
