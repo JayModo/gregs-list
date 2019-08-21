@@ -10,9 +10,10 @@ let _carService = new CarService
 function _draw() {
   let template = ''
   let cars = _carService.Cars
+
   //check back to d$ copy to fix this
   cars.forEach((car, index) => {
-    // template += car.Template
+    template += car.Template
     //template += `<button onclick="app.controllers.carController.deleteCar(${index})" > Delete Car </button>`
   })
 
@@ -37,8 +38,8 @@ export default class CarController {
     _draw()
   }
 
-  deleteCar(index) {
-    _carService
+  deleteCar(id) {
+    _carService.deletCar(id)
   }
 
   addCar(event) {
@@ -46,7 +47,6 @@ export default class CarController {
     let form = event.target
 
     let newCar = {
-
       make: form.make.value,
       model: form.model.value,
       imgUrl: form.imgUrl.value,
