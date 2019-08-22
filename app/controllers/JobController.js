@@ -6,11 +6,11 @@ let _jobService = JobService
 
 function _draw() {
   let template = ''
-  let jobs = _jobService.
-
-    jobs.forEach((job) => {
-      template += job.Template
-    });
+  let Jobs = _jobService.Jobs
+  debugger
+  Jobs.forEach((job) => {
+    template += job.Template
+  });
 
 
   document.querySelector("#jobs").innerHTML = template
@@ -31,12 +31,13 @@ export default class JobController {
   addJob(event) {
     event.preventDefault()
     let form = event.target
-
     let newJob = {
       title: form.title.value,
+      pay: form.pay.value,
+      positionDescription: form.positionDescription.value,
+      company: form.company.value
 
     }
-
     _jobService.addJob(newJob)
     _draw()
   }

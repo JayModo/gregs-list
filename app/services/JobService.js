@@ -16,19 +16,18 @@ let _state = {
 
 
 export default class JobService {
-  constructor() {
-    console.log("job services online")
+  static addJob(newJob) {
+    _state.jobs.push(new Job(newJob))
   }
 
 
 
-  addJob(newJob) {
-    _state.jobs.push(new Job)
-  }
 
-  get Jobs() {
+  get jobs() {
     return _state.jobs.map(job => new Job(job))
   }
 
 
 }
+
+JobService.Jobs = undefined;

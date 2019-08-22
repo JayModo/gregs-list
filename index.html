@@ -87,11 +87,27 @@
 
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <h1 class="col-12">Make a job</h1>
-
-
-
+      <div class="col-12">Make a job
+        <form onsubmit="app.controllers.jobController.addJob(event)" class="col-5">
+          <div class="form-group">
+            <label for="title">title</label>
+            <input type="text" class="form-control" id="title" placeholder="Type in title">
+          </div>
+          <div class="form-group">
+            <label for="pay">pay</label>
+            <input type="number" min="1900" max="2021" class="form-control" id="pay" placeholder="pay">
+          </div>
+          <div class="form-group">
+            <label for="positionDescription"></label>
+            <input type="text" class="form-control" id="year" placeholder="positionDescription">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">make a job</button>
+        </form>
+      </div>
+      <div id="houses" class="row"></div>
     </div>
+  </div>
 
 
   </div>
