@@ -1,31 +1,28 @@
 import JobService from "../services/JobService.js";
 
-let _jobService = JobService
+let _jobService = new JobService
 
 
 
 function _draw() {
+  let jobs = _jobService.jobs
   let template = ''
-  let Jobs = _jobService.Jobs
-  debugger
-  Jobs.forEach((job) => {
-    template += job.Template
-  });
-
-
-  document.querySelector("#jobs").innerHTML = template
-
-
+  jobs.forEach(j => template += j.template)
+  document.getElementById('job-cards').innerHTML = template
 
 }
 
 
 export default class JobController {
   constructor() {
-    console.log("job controller good")
-    _draw()
+    _jobService.addSubscriber('jobs', _draw)
+    _jobService.getApiJobs()
   }
-
+  deleteJob(id) {
+    if (window.confirm("are you sure")) {
+      _jobService.deleteJob(id)
+    }
+  }
 
 
   addJob(event) {

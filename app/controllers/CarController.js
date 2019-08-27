@@ -1,6 +1,7 @@
 import CarService from "../services/CarService.js";
 
 
+
 let _carService = new CarService
 
 
@@ -8,44 +9,28 @@ let _carService = new CarService
 //get cars form service
 //element inject to the cars template info
 function _draw() {
-  let template = ''
   let cars = _carService.Cars
-
-  //check back to d$ copy to fix this
-  cars.forEach((car, index) => {
-    template += car.Template
-    //template += `<button onclick="app.controllers.carController.deleteCar(${index})" > Delete Car </button>`
-  })
-
-  //same as above
-  // for (let i = 0; i < cars.length; i++) {
-  // const car = cars[i];
-
-  //}
-
-  document.querySelector('#cars').innerHTML = template
-
-
-
+  let template = ''
+  cars.forEach(c => template += c.Template)
+  document.getElementById('car-cards').innerHTML = template
+  //template += `<button onclick="app.controllers.carController.deleteCar(${index})" > Delete Car </button>`
 }
 
+//same as above
+// for (let i = 0; i < cars.length; i++) {
+// const car = cars[i];
 
-
+//}
 
 export default class CarController {
   constructor() {
-    console.log("controller")
-    _draw()
-  }
-
-  deleteCar(id) {
-    _carService.deletCar(id)
+    _carService.addSubscriber('cars', _draw)
+    _carService.getApiCars()
   }
 
   addCar(event) {
     event.preventDefault()
     let form = event.target
-
     let newCar = {
       make: form.make.value,
       model: form.model.value,
@@ -56,9 +41,18 @@ export default class CarController {
 
     }
     _carService.addCar(newCar)
-    _draw()
+    form.reset()
 
   }
 
+  deleteCar(id) {
+    if (window.confirm("are you sure")) {
+      _carService.deleteCar(id)
+    }
+  }
+  bid(id) {
+    _carService.bid(id)
+  }
 
 }
+

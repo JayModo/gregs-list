@@ -14,36 +14,40 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <h1 class="col-12">make a car</h1>
-      <form onsubmit="app.controllers.carController.addCar(event)" class="col-5">
+      <form class="d-flex" onsubmit="app.controllers.carController.addCar(event)">
         <div class="form-group">
           <label for="make">Make</label>
-          <input type="text" class="form-control" id="make" placeholder="Type in make">
+          <input type="text" class="form-control" id="make" placeholder="Type in make" name="make"> <button
+            class="btn btn-success" type="submit">create</button>
         </div>
         <div class="form-group">
           <label for="model">model</label>
-          <input type="text" class="form-control" id="model" placeholder="Type in model">
+          <input type="text" class="form-control" id="model" placeholder="Type in model" name="model">
         </div>
         <div class="form-group">
           <label for="year">year</label>
-          <input type="number" min="1900" max="2021" class="form-control" id="year" placeholder="pick a year">
+          <input type="number" class="form-control" id="year" placeholder="year" name="year">
         </div>
         <div class="form-group">
           <label for="imgUrl">image</label>
-          <input type="text" class="form-control" id="imgUrl" placeholder="Image">
+          <input type="text" class="form-control" id="imgUrl" placeholder="Image" name="imgUrl">
         </div>
         <div class="form-group">
           <label for="description">Discription</label>
-          <input type="text" class="form-control" id="description" placeholder="description here">
+          <input type="text" class="form-control" id="description" placeholder="description here" name="description">
         </div>
         <div class="form-group">
           <label for="price">Price</label>
-          <input type="number" class="form-control" id="price" placeholder="price here">
+          <input type="number" class="form-control" id="price" placeholder="price here" name="price">
         </div>
 
-        <button type="submit" class="btn btn-primary">make car</button>
       </form>
     </div>
-    <div id="cars" class="row">
+    <div class="col-12">
+      <h3>Available Cars</h3>
+      <hr>
+    </div>
+    <div id="car-cards" class="row">
     </div>
   </div>
 
@@ -51,61 +55,69 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <h1 class="col-12">make a house</h1>
-      <form onsubmit="app.controllers.houseController.addHouse(event)" class="col-5">
+      <form class="d-flex" onsubmit="app.controllers.houseController.addHouse(event)" class="col-5">
         <div class="form-group">
           <label for="type">type</label>
-          <input type="text" class="form-control" id="type" placeholder="Type in type">
+          <input type="text" class="form-control" id="type" placeholder="Type in type" name="type">
+          <button class="btn btn-success" type="submit">create</button>
         </div>
         <div class="form-group">
           <label for="sqft">sqft</label>
-          <input type="text" class="form-control" id="sqft" placeholder="Type in sqft">
+          <input type="text" class="form-control" id="sqft" placeholder="Type in sqft" name="sqft">
         </div>
         <div class="form-group">
           <label for="houseYear">year</label>
-          <input type="number" min="1900" max="2021" class="form-control" id="year" placeholder="pick a year">
+          <input type="number" min="1900" max="2021" class="form-control" id="year" placeholder="pick a year"
+            name="houseyear">
         </div>
         <div class="form-group">
           <label for="ImgUrl">image</label>
-          <input type="text" class="form-control" id="imgUrl" placeholder="Image">
+          <input type="text" class="form-control" id="imgUrl" placeholder="Image" name="imgUrl">
         </div>
         <div class="form-group">
           <label for="description">Discription</label>
-          <input type="text" class="form-control" id="description" placeholder="description here">
+          <input type="text" class="form-control" id="description" placeholder="description here" name="description">
         </div>
         <div class="form-group">
           <label for="price">Price</label>
-          <input type="number" class="form-control" id="price" placeholder="price here">
+          <input type="number" class="form-control" id="price" placeholder="price here" name="price">
         </div>
-
-        <button type="submit" class="btn btn-primary">make a house</button>
       </form>
     </div>
-
-    <div id="houses" class="row">
+    <div id="house-cards" class="row">
+      <h3>Available houses</h3>
+      <hr>
     </div>
   </div>
 
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-12">Make a job
-        <form onsubmit="app.controllers.jobController.addJob(event)" class="col-5">
+        <form class="d-flex" onsubmit="app.controllers.jobController.addJob(event)" class="col-5">
+          <div class="form-group">
+            <label for="company">company</label>
+            <input type="text" class="form-control" id="company" placeholder="company name" name="company">
+            <button class="btn btn-success" type="submit">create</button>
+          </div>
           <div class="form-group">
             <label for="title">title</label>
-            <input type="text" class="form-control" id="title" placeholder="Type in title">
+            <input type="text" class="form-control" id="title" placeholder="title" name="title">
           </div>
           <div class="form-group">
             <label for="pay">pay</label>
-            <input type="number" min="1900" max="2021" class="form-control" id="pay" placeholder="pay">
+            <input type="number" min="1900" max="2021" class="form-control" id="pay" placeholder="pay" name="pay">
           </div>
           <div class="form-group">
             <label for="positionDescription"></label>
-            <input type="text" class="form-control" id="year" placeholder="positionDescription">
+            <input type="text" class="form-control" id="year" placeholder="positionDescription"
+              name="positionDescription">
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary">make a job</button>
         </form>
       </div>
-      <div id="houses" class="row"></div>
+      <div id="job-cards" class="row"></div>
+      <h3>Available jobs</h3>
+      <hr>
     </div>
   </div>
 
@@ -113,7 +125,8 @@
   </div>
 
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"
+    integrity="sha256-XmdRbTre/3RulhYk/cOBUMpYlaAp2Rpo/s556u0OIKk=" crossorigin="anonymous"></script>
   <script src="app/main.js" type="module"></script>
 </body>
 
